@@ -200,10 +200,4 @@ if (gqlSchema.getQueryType()) {
   console.log('[gqlg warning]:', 'No query type found in your schema');
 }
 
-if (gqlSchema.getSubscriptionType()) {
-  generateFile(gqlSchema.getSubscriptionType().getFields(), 'Subscription');
-} else {
-  console.log('[gqlg warning]:', 'No subscription type found in your schema');
-}
-
 fs.writeFileSync(path.join(destDirPath, 'index.js'), indexJsExportAll);
